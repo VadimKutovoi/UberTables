@@ -253,10 +253,11 @@ struct TNode {
 public:
 	int balance;
 	TRecord<TKey, TValue> rec;
-	TNode *pLeft, *pRight;
+	TNode<TKey, TValue> *pLeft, *pRight;
 
 	TNode() {
-		rec = new TRecord<TKey, TValue>();
+		TRecord<TKey, TValue> t;
+		rec = t;
 		pLeft = pRight = nullptr;
 		balance = 0;
 	}
@@ -283,18 +284,21 @@ public:
 
 	bool Find(TKey key) {
 		pRes = &pRoot;
-		
+
 		while (*pRes != nullptr) {
 			Eff++;
-			if ((*pRes)->rec.key == key)
+
+			if ((*pRes)->rec.key== key) {
 				return true;
+			}
+			else if ((*pRes)->rec.key < key) {
+				pRes = &((*pRes)->pRight);
+			}
 			else {
-				if ((*pRes)->rec.key < key)
-					pRes = &((*pRes)->pRight);
-				else
-					pRes = &((*pRes)->pLeft);
+				pRes = &((*pRes)->pLeft);
 			}
 		}
+
 		return false;
 	}
 	void Insert(TRecord <TKey, TValue> tr) {

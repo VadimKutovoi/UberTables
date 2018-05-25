@@ -32,15 +32,18 @@ void main()
 		if (scanTable.Find(buf)) scanTable.SetCurr(scanTable.GetCurr().value + 1);
 		if (sortTable.Find(buf)) sortTable.SetCurr(sortTable.GetCurr().value + 1);
 		if (hashTable.Find(buf)) hashTable.SetCurr(hashTable.GetCurr().value + 1);
+		/*if (treeTable.Find(buf)) treeTable.SetCurr(treeTable.GetCurr().value + 1);*/
 
 		scanTable.Insert(record);
 		sortTable.Insert(record);
 		hashTable.Insert(record);
+		treeTable.Insert(record);
 	}
 
 	/*scanTable.Print();*/
-	sortTable.Print();
+	/*sortTable.Print();*/
 	/*hashTable.Print();*/
+	treeTable.Print();
 
 	system("PAUSE");
 }
