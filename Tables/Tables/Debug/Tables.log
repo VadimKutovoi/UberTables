@@ -1,0 +1,59 @@
+﻿  Source.cpp
+c:\users\sirku\desktop\ubertables\tables\tables\tables.h(408): warning C4018: '<': signed/unsigned mismatch
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(404): note: while compiling class template member function 'TArrayHash<std::string,int>::TArrayHash(int)'
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(12): note: see reference to function template instantiation 'TArrayHash<std::string,int>::TArrayHash(int)' being compiled
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(12): note: see reference to class template instantiation 'TArrayHash<std::string,int>' being compiled
+c:\users\sirku\desktop\ubertables\tables\tables\tables.h(36): warning C4101: 'l2': unreferenced local variable
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(34): note: while compiling class template member function 'void TTable<TKey,TValue>::Print(void)'
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(42): note: see reference to function template instantiation 'void TTable<TKey,TValue>::Print(void)' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(58): note: see reference to class template instantiation 'TTable<TKey,TValue>' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(123): note: see reference to class template instantiation 'TArrayTable<TKey,TValue>' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(10): note: see reference to class template instantiation 'TScanTable<std::string,int>' being compiled
+c:\users\sirku\desktop\ubertables\tables\tables\tables.h(259): error C2679: binary '=': no operator found which takes a right-hand operand of type 'TRecord<std::string,int> *' (or there is no acceptable conversion)
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(11): note: could be 'TRecord<std::string,int> &TRecord<std::string,int>::operator =(TRecord<std::string,int> &&) noexcept'
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(11): note: or       'TRecord<std::string,int> &TRecord<std::string,int>::operator =(const TRecord<std::string,int> &)'
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(259): note: while trying to match the argument list '(TRecord<std::string,int>, TRecord<std::string,int> *)'
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(258): note: while compiling class template member function 'TNode<TKey,TValue>::TNode(void)'
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(302): note: see reference to function template instantiation 'TNode<TKey,TValue>::TNode(void)' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(379): note: see reference to class template instantiation 'TNode<TKey,TValue>' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(378): note: while compiling class template member function 'void TTreeTable<std::string,int>::SetCurr(TValue)'
+          with
+          [
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(13): note: see reference to class template instantiation 'TTreeTable<std::string,int>' being compiled
