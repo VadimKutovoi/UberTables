@@ -1,2 +1,52 @@
-﻿  Tables.vcxproj -> C:\Users\sirku\Desktop\UberTables\Tables\Tables\Debug\Tables.exe
+﻿  Source.cpp
+c:\users\sirku\desktop\ubertables\tables\tables\tables.h(421): warning C4018: '<': signed/unsigned mismatch
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(417): note: while compiling class template member function 'TArrayHash<std::string,int>::TArrayHash(int)'
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(31): note: see reference to function template instantiation 'TArrayHash<std::string,int>::TArrayHash(int)' being compiled
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(31): note: see reference to class template instantiation 'TArrayHash<std::string,int>' being compiled
+c:\users\sirku\desktop\ubertables\tables\tables\tables.h(37): warning C4101: 'l2': unreferenced local variable
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(35): note: while compiling class template member function 'void TTable<TKey,TValue>::Print(void)'
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(69): note: see reference to function template instantiation 'void TTable<TKey,TValue>::Print(void)' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(59): note: see reference to class template instantiation 'TTable<TKey,TValue>' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(124): note: see reference to class template instantiation 'TArrayTable<TKey,TValue>' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\source.cpp(29): note: see reference to class template instantiation 'TScanTable<std::string,int>' being compiled
+c:\users\sirku\desktop\ubertables\tables\tables\tables.h(402): warning C4018: '<': signed/unsigned mismatch
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(400): note: while compiling class template member function 'int THashTable<TKey,TValue>::HashFunc(TKey)'
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(431): note: see reference to function template instantiation 'int THashTable<TKey,TValue>::HashFunc(TKey)' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  c:\users\sirku\desktop\ubertables\tables\tables\tables.h(412): note: see reference to class template instantiation 'THashTable<TKey,TValue>' being compiled
+          with
+          [
+              TKey=std::string,
+              TValue=int
+          ]
+  Tables.vcxproj -> C:\Users\sirku\Desktop\UberTables\Tables\Tables\Debug\Tables.exe
   Tables.vcxproj -> C:\Users\sirku\Desktop\UberTables\Tables\Tables\Debug\Tables.pdb (Full PDB)

@@ -31,15 +31,17 @@ void main()
 	TArrayHash<std::string, int> hashTable(1000);
 	TTreeTable<std::string, int> treeTable;
 
+	std::string command = "";
 	char buf[50];
 	
 	std::ifstream f("C:\\Users\\sirku\\Desktop\\UberTables\\Tables\\Tables\\Debug\\text.txt", std::ios_base::in);
 
 	if (!f.is_open()) {
-		std::cout << "incorrect file";
+		std::cout << "Incorrect file";
 		system("PAUSE");
 		exit(0);
 	}
+	else std::cout << "Loaded file" << std::endl;
 
 	record.value = 1;
 
@@ -51,7 +53,7 @@ void main()
 		if (scanTable.Find(buf)) scanTable.SetCurr(scanTable.GetCurr().value + 1);
 		if (sortTable.Find(buf)) sortTable.SetCurr(sortTable.GetCurr().value + 1);
 		if (hashTable.Find(buf)) hashTable.SetCurr(hashTable.GetCurr().value + 1);
-		/*if (treeTable.Find(buf)) treeTable.SetCurr(treeTable.GetCurr().value + 1);*/
+		if (treeTable.Find(buf)) treeTable.SetRes(treeTable.GetRes().value + 1);
 
 		scanTable.Insert(record);
 		sortTable.Insert(record);
@@ -59,21 +61,109 @@ void main()
 		treeTable.Insert(record);
 	}
 
-	scanTable.Print();
-	/*sortTable.Print();
-	hashTable.Print();
-	treeTable.Print();*/
+	std::cout << "Initialised tables" << std::endl;
 
-	std::cout << scanTable.GetEff() << std::endl;
+	while (true) {
+		std::cin >> command;
 
-	record.key = "Vadim";
-	scanTable.Insert(record);
+		if (command == "PRINT_treeTable") treeTable.Print();
+		else if (command == "PRINT_sortTable") sortTable.Print();
+		else if (command == "PRINT_hashTable") hashTable.Print();
+		else if (command == "PRINT_scanTable") scanTable.Print();
 
-	clrscr();
+		else if (command == "CLEAR") clrscr();
+		else if (command == "EXIT") exit(0);
 
-	scanTable.Print();
+		else if (command == "INSERT_IN_treeTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+			std::cout << "value = ";
+			std::cin >> record.value;
+			std::cout << std::endl;
 
-	std::cout << scanTable.GetEff() << std::endl;
+			treeTable.Insert(record);
+		}
+
+		else if (command == "INSERT_IN_sortTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+			std::cout << "value = ";
+			std::cin >> record.value;
+			std::cout << std::endl;
+
+			sortTable.Insert(record);
+		}
+
+		else if (command == "INSERT_IN_hashTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+			std::cout << "value = ";
+			std::cin >> record.value;
+			std::cout << std::endl;
+
+			hashTable.Insert(record);
+		}
+
+		else if (command == "INSERT_IN_scanTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+			std::cout << "value = ";
+			std::cin >> record.value;
+			std::cout << std::endl;
+
+			scanTable.Insert(record);
+		}
+
+		else if (command == "DELETE_FROM_treeTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+
+			treeTable.Delete(record.key);
+		}
+
+		else if (command == "DELETE_FROM_sortTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+
+			sortTable.Delete(record.key);
+		}
+
+		else if (command == "DELETE_FROM_hashTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+
+			hashTable.Delete(record.key);
+		}
+
+		else if (command == "DELETE_FROM_scanTable") {
+			std::cout << "key = ";
+			std::cin >> record.key;
+			std::cout << std::endl;
+
+			scanTable.Delete(record.key);
+		}
+		else if (command == "HELP") {
+			std::cout << "PRINT_tableName" << std::endl;
+			std::cout << "INSERT_IN_tableName" << std::endl;
+			std::cout << "DELETE_FROM_tableName" << std::endl;
+			std::cout << "CLEAR" << std::endl;
+			std::cout << "EXIT" << std::endl;
+		}
+		else if (command == "SHOW_EFF") {
+			std::cout << "scan eff = " << scanTable.GetEff() << std::endl;
+			std::cout << "sort eff = " << sortTable.GetEff() << std::endl;
+			std::cout << "tree eff = " << treeTable.GetEff() << std::endl;
+			std::cout << "hash eff = " << hashTable.GetEff() << std::endl;
+		}
+		else std::cout << "INCORRECT COMMAND" << std::endl;
+	}
 
 	system("PAUSE");
 }

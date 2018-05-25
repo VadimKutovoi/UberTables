@@ -212,9 +212,9 @@ public:
 		}
 	}
 
-	void Delete()
+	void Delete(TKey key)
 	{
-		if (Find(tr.key))
+		if (Find(key))
 		{
 			for (int i = curr; i < dataCount; i++)
 			{
@@ -316,7 +316,7 @@ public:
 
 	void Delete(TKey key) {
 		if (Find(key)) {
-			TNode *tmp = *pRes;
+			TNode<TKey, TValue> *tmp = *pRes;
 			if (tmp->pLeft == nullptr)
 				*pRes = tmp->pRight;
 			else if (tmp->pRight == nullptr)
@@ -382,6 +382,14 @@ public:
 
 	void SetCurr(TValue val) {
 		pCurr->rec.value = val;
+	}
+
+	TRecord <TKey, TValue> GetRes() {
+		return (*pRes)->rec;
+	}
+
+	void SetRes(TValue val) {
+		(*pRes)->rec.value = val;
 	}
 };
 
@@ -452,7 +460,7 @@ public:
 	void Delete(TKey key)
 	{
 		if (Find(key)) {
-			arr[curr] = "&";
+			arr[curr].key = "&";
 			dataCount--;
 		}
 	}
