@@ -30,6 +30,7 @@ public:
 	virtual void GoNext() = 0;
 	virtual TRecord<TKey, TValue> GetCurr() = 0;
 	virtual void SetCurr(TValue val) = 0;
+	int GetEff() { return Eff; }
 	void Print()
 	{
 		TRecord<TKey, TValue> tmp;

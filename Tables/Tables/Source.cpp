@@ -2,6 +2,25 @@
 #include<string>
 #include<fstream>
 #include<iostream>
+#include <windows.h>
+
+void clrscr(void)
+{
+	HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (!Console) return;
+
+	CONSOLE_SCREEN_BUFFER_INFO buf;
+	GetConsoleScreenBufferInfo(Console, &buf);
+
+	DWORD Count;
+
+	COORD zpos;
+	zpos.X = 0;
+	zpos.Y = 0;
+
+	FillConsoleOutputCharacter(Console, ' ', buf.dwSize.X * buf.dwSize.Y, zpos, &Count);
+	SetConsoleCursorPosition(Console, zpos);
+}
 
 void main()
 {
@@ -40,10 +59,21 @@ void main()
 		treeTable.Insert(record);
 	}
 
-	/*scanTable.Print();*/
-	/*sortTable.Print();*/
-	/*hashTable.Print();*/
-	treeTable.Print();
+	scanTable.Print();
+	/*sortTable.Print();
+	hashTable.Print();
+	treeTable.Print();*/
+
+	std::cout << scanTable.GetEff() << std::endl;
+
+	record.key = "Vadim";
+	scanTable.Insert(record);
+
+	clrscr();
+
+	scanTable.Print();
+
+	std::cout << scanTable.GetEff() << std::endl;
 
 	system("PAUSE");
 }
